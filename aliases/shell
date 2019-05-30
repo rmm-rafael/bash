@@ -1,0 +1,13 @@
+unalias -a
+
+ # Elevate access
+alias su="sudo su"
+
+# Safety first
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# Disk utility aliases
+alias df='df -h'
+alias du='du -h'
