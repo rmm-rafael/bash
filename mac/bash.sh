@@ -18,6 +18,9 @@ fi
 # GO HOME
 cd "$HOME" || exit
 
+# Ask for the administrator password upfront
+sudo -v
+
 # install 
 brew install bash bash-completion@2
 
