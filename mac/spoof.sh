@@ -29,10 +29,10 @@ cd "$HOME" || exit
 brew install spoof-mac
 
 # spoof-mac 
-sudo cat <<EOF >  /Library/LaunchDaemons/homebrew.mxcl.spoof-mac.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+rm -rf /Library/LaunchDaemons/homebrew.mxcl.spoof-mac.plist
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
   <dict>
     <key>Label</key>
     <string>MacSpoof</string>
@@ -46,8 +46,7 @@ sudo cat <<EOF >  /Library/LaunchDaemons/homebrew.mxcl.spoof-mac.plist
     <key>RunAtLoad</key>
     <true/>
   </dict>
-</plist>
-EOF
+</plist>" >> /Library/LaunchDaemons/homebrew.mxcl.spoof-mac.plist
 
 # start the service
 sudo brew services start spoof-mac
